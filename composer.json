@@ -1,0 +1,19 @@
+{
+    "name": "alfa/psr4",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Alfa\\":"src/"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.1"
+    },
+    "scripts": {
+        "cli":"cd public && php index.php",
+        "serve":"php -S localhost:8080 -t public/"
+    },
+    "config": {
+        "process-timeout": 0
+    }
+}
