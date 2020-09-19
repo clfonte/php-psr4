@@ -7,16 +7,14 @@ require_once '../vendor/autoload.php';
 use Alfa\Conta;
 use Alfa\Util\Date;
 
-$minhaConta = new Conta();
-$minhaConta->titular = "Camila";
-$minhaConta->saldo = 5.00;
+// tudo que é necessário para o sistema funcionar vai ser passado através desse construtor
+$minhaConta = new Conta(1, "Camila", 5.00);
 
-$minhaContaDoFuturo = new Conta();
-$minhaContaDoFuturo->saldo = 1_000_000_000.00;
-$minhaContaDoFuturo->titular = "Edneia";
-
+$minhaContaDoFuturo = new Conta(2, "Michaella", 1_000_00.00);
 
 $minhaContaDoFuturo->tranfere($minhaConta, 1_000_000.00);
+
+echo $minhaConta->pegaSaldo();
 
 dump($minhaConta);
 dump($minhaContaDoFuturo);
