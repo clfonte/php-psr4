@@ -4,19 +4,11 @@ declare(strict_types=1);
 
 require_once '../vendor/autoload.php';
 
-use Alfa\Conta;
-use Alfa\Util\Date;
+use Alfa\Heranca\Funcionario;
+use Alfa\Heranca\Gerente;
 
-// tudo que é necessário para o sistema funcionar vai ser passado através desse construtor
-$minhaConta = new Conta(1, "Camila", 5.00);
-dump ( $minhaConta->saca ( 20.00 ) );
+$funcionario = new Funcionario("Camila");
+$gerente = new Gerente("Michaella");
 
-$minhaContaDoFuturo = new Conta(2, "Michaella", 1_000_00.00);
-
-$minhaContaDoFuturo->tranfere($minhaConta, 10.00);
-
-echo $minhaConta->pegaSaldo();
-
-dump($minhaConta);
-dump($minhaContaDoFuturo);
-dump(Conta::$movimentacoes);
+dump($funcionario->getBonificacao());
+dump($gerente->getBonificacao());
